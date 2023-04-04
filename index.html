@@ -82,6 +82,77 @@
       </aside>
     </div>
     <!-- end of sidebar  -->
+    <!-- cart  -->
+    <div class="cart-overlay">
+      <aside class="cart">
+        <button class="cart-close"><i class="fas fa-times"></i></button>
+        <header>
+          <h3 class="text-slanted">your bag</h3>
+        </header>
+        <!-- cart items  -->
+        <div class="cart-items">
+          <!-- single item  -->
+          <article class="cart-item" data-id="">
+            <img
+              src="./images/main-bcg.jpeg"
+              class="cart-item-img"
+              alt="name"
+            />
+            <!-- item info  -->
+            <div>
+              <h4 class="cart-item-name">high-back bench</h4>
+              <p class="cart-item-price">$13.99</p>
+              <button class="cart-item-remove-btn">remove</button>
+            </div>
+            <!-- amount toggle  -->
+            <div>
+              <button class="cart-item-increase-btn">
+                <i class="fas fa-chevron-up"></i>
+              </button>
+              <p class="cart-item-amount">2</p>
+              <button class="cart-item-increase-btn">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+          </article>
+          <!-- end of single item  -->
+        </div>
+        <!-- footer  -->
+        <h3 class="cart-total text-slanted">total : $10.99</h3>
+        <button class="cart-checkout btn">checkout</button>
+      </aside>
+    </div>
+    <!-- end of cart  -->
+    <!-- fetured products  -->
+    <section class="section featured">
+      <div class="title">
+        <h2><span>/</span>featured</h2>
+      </div>
+      <div class="featured-center section-center">
+        <h2 class="section-loading">loading...</h2>
+        <!-- single product  -->
+        <!-- <article class="product">
+          <div class="product-container">
+            <img src="./images/main-bcg.jpeg" class="product-img img" alt="" />
+            <div class="product-icons">
+              <a href="product.html?id=1" class="product-icon"
+                ><i class="fas fa-search"></i
+              ></a>
+              <button class="product-cart-btn product-icon" data-id="1">
+                <i class="fas fa-shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+          <footer>
+            <p class="product-name">name</p>
+            <h4 class="product-price">$9.99</h4>
+          </footer>
+        </article> -->
+        <!-- end of single product  -->
+      </div>
+      <a href="products.html" class="btn">all products</a>
+    </section>
+    <!-- end of fetured products  -->
     <!-- JavaScript -->
     <script type="module" src="index.js"></script>
   </body>
