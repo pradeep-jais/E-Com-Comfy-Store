@@ -3,9 +3,10 @@ import { addToCart } from './cart/setupCart.js';
 
 const display = (products, element) => {
   // display products on DOM
-  element.innerHTML = products.map((item) => {
-    const { id, name, image, price } = item;
-    return `<article class="product">
+  element.innerHTML = products
+    .map((item) => {
+      const { id, name, image, price } = item;
+      return `<article class="product">
           <div class="product-container">
             <img src="${image}" class="product-img img" alt="${name}" />
             <div class="product-icons">
@@ -22,6 +23,14 @@ const display = (products, element) => {
             <h4 class="product-price">${formatPrice(price)}</h4>
           </footer>
         </article>`;
+    })
+    .join('');
+  element.addEventListener('click', (e) => {
+    const parent = e.target.parentElement;
+    if (parent.classList.contains('product-cart-btn')) {
+      const id = parent.dataset.id;
+      console.log(id);
+    }
   });
 };
 
