@@ -638,7 +638,7 @@ Products Page
   grid-gap: 1rem;
   margin: 4rem auto;
   max-width: var(--max-width);
-  position: relative;
+  /* position: relative; */
 }
 .filters-container {
   position: sticky;
@@ -687,6 +687,9 @@ Products Page
     top: 1rem;
   }
 }
+.products-container {
+  position: relative;
+}
 @media screen and (min-width: 992px) {
   .products-container {
     display: grid;
@@ -711,10 +714,9 @@ Products Page
 .filter-error {
   position: absolute;
   top: 5rem;
-  left: 0;
+  left: 0rem;
   width: 100%;
   text-align: center;
-  margin-top: 4rem;
 }
 /*
 =============== 
