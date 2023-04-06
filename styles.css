@@ -713,8 +713,10 @@ Products Page
 }
 .filter-error {
   position: absolute;
-  top: 5rem;
+  top: 50%;
+  transform: translateY(-50%);
   left: 0rem;
+  padding: 5rem 0;
   width: 100%;
   text-align: center;
 }
