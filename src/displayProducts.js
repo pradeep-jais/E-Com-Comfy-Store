@@ -29,7 +29,7 @@ const display = (products, element) => {
     const parent = e.target.parentElement;
     if (parent.classList.contains('product-cart-btn')) {
       const id = parent.dataset.id;
-      console.log(id);
+      addToCart(id);
     }
   });
 };
