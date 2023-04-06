@@ -12,3 +12,7 @@
   currency: 'USD',
   }).format((price / 100).toFixed(2));
 - Stripe, a payment processor mainly calculate payments in cents only
+
+# "input" event Listener
+
+- The input event fires when the value of an <input>, <select>, or <textarea> element has been changed.
