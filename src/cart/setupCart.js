@@ -56,7 +56,6 @@ function displayCartTotal() {
 }
 
 function displayCartItemsDOM() {
-  console.log('removed');
   cart.forEach((cartItem) => {
     addToCartDOM(cartItem);
   });
@@ -76,7 +75,6 @@ function increaseAmount(id) {
     }
   });
   setStorageItem('cart', cart);
-  console.log(cart);
   // update amount in DOM
   const cartItemAmountList = [
     ...document.querySelectorAll('.cart-item-amount'),
@@ -136,6 +134,39 @@ function removeItem(id) {
   });
 }
 
+// setup cart functionality
+function cartFunctionality() {
+  cartItemsDOM.addEventListener('click', function (e) {
+    // increase amount
+    const btn = e.target.parentElement;
+    if (btn.classList.contains('cart-item-increase-btn')) {
+      const id = e.target.parentElement.dataset.id;
+      increaseAmount(id);
+      // Alternate to DOM amount update
+      // btn.nextElementSibling.textContent = newAmount;
+      // In case return newAmount from increaseAmount()
+    }
+
+    // decrease amount
+    if (btn.classList.contains('cart-item-decrease-btn')) {
+      const id = e.target.parentElement.dataset.id;
+      decreaseAmount(id);
+      // btn.previousElementSibling.textContent = newAmount;
+    }
+
+    // remove item
+    if (e.target.classList.contains('cart-item-remove-btn')) {
+      const id = e.target.dataset.id;
+      removeItem(id);
+
+      // Alternate for what i'm doing in removeItem to remove item from DOM
+      // e.target.parentElement.parentElement.remove();
+    }
+    // update values
+    displayCartTotal();
+    displayCartItemCount();
+  });
+}
 // Initiate cart functionality
 function init() {
   displayCartItemCount();
@@ -145,31 +176,6 @@ function init() {
   // add all cart items to the DOM from local storage
   displayCartItemsDOM();
 
-  // setup cart functionality
-  cartItemsDOM.addEventListener('click', function (e) {
-    // increase amount
-    if (e.target.parentElement.classList.contains('cart-item-increase-btn')) {
-      const id = e.target.parentElement.dataset.id;
-      increaseAmount(id);
-      displayCartTotal();
-      displayCartItemCount();
-    }
-
-    // decrease amount
-    if (e.target.parentElement.classList.contains('cart-item-decrease-btn')) {
-      const id = e.target.parentElement.dataset.id;
-      decreaseAmount(id);
-      displayCartTotal();
-      displayCartItemCount();
-    }
-
-    // remove item
-    if (e.target.classList.contains('cart-item-remove-btn')) {
-      const id = e.target.dataset.id;
-      removeItem(id);
-      displayCartTotal();
-      displayCartItemCount();
-    }
-  });
+  cartFunctionality();
 }
 init();
